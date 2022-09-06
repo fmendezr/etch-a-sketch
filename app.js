@@ -13,3 +13,11 @@ grid.style.gridTemplateRows = "repeat(16, 1fr)"
  };
 
  createSquares();
+
+
+ const squares = document.querySelectorAll(".grid-square")
+squares.forEach(square => {
+    square.addEventListener('mouseover', () => {
+        square.style.backgroundColor = "red";
+    })
+})
