@@ -26,10 +26,16 @@ squares.forEach(square => {
     square.addEventListener('mouseover', () => {
         square.style.backgroundColor = "red";
     })
-})
+});
 
 // set up change 
 const sizeInput = document.getElementById("size-input");
 sizeInput.addEventListener('change', () => {
     createSquares(sizeInput.value);
-})
+});
+
+// make displayer show active value of range input 
+const displayInput = document.getElementById('display-input');
+sizeInput.addEventListener('input', () => {
+    displayInput.textContent = sizeInput.value + " x " + sizeInput.value;
+} )
