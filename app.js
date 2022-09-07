@@ -1,10 +1,21 @@
+ // change colors of squares when mouse passes over them 
+ const addColor = () => {
+    const squares = document.querySelectorAll(".grid-square")
+    squares.forEach(square => {
+        square.addEventListener('mouseover', () => {
+            square.style.backgroundColor = "red";
+        })
+    });
+ }
+ 
+ // create squares and change ammount of rows and colums that organize grid
  const createSquares = (size = 16) => {
     // first adjust the ammount of squares the board then 
     const grid = document.getElementById("grid");
     const squares = document.querySelectorAll(".grid-square");
     // remove squares if there are any (used for when you cahange stuff)
-    squares.forEach(div => 
-        div.remove()
+    squares.forEach(square => 
+        square.remove()
         );
     grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     grid.style.gridTemplateRows = `repeat(${size}, 1fr)`;
@@ -15,19 +26,11 @@
         square.style.border = "1px solid white";
         grid.insertAdjacentElement("beforeend", square);
     }
+    addColor();
  };
 
 createSquares();
  
-
-// change colors of squares when mouse passes over them 
- const squares = document.querySelectorAll(".grid-square")
-squares.forEach(square => {
-    square.addEventListener('mouseover', () => {
-        square.style.backgroundColor = "red";
-    })
-});
-
 // set up change 
 const sizeInput = document.getElementById("size-input");
 sizeInput.addEventListener('change', () => {
@@ -38,4 +41,5 @@ sizeInput.addEventListener('change', () => {
 const displayInput = document.getElementById('display-input');
 sizeInput.addEventListener('input', () => {
     displayInput.textContent = sizeInput.value + " x " + sizeInput.value;
-} )
+});
+
