@@ -43,3 +43,10 @@ sizeInput.addEventListener('input', () => {
     displayInput.textContent = sizeInput.value + " x " + sizeInput.value;
 });
 
+// clear grid 
+const clearBtn = document.getElementById('clear-btn');
+clearBtn.addEventListener('click', () => {
+    const squares = document.querySelectorAll('.grid-square')
+    squares.forEach(square =>
+        square.style.backgroundColor = 'black')
+})
