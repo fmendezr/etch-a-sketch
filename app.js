@@ -2,7 +2,7 @@
     // first adjust the ammount of squares the board then 
     const grid = document.getElementById("grid");
     const squares = document.querySelectorAll(".grid-square");
-    //remove squares if there are any (used for when you cahange stuff)
+    // remove squares if there are any (used for when you cahange stuff)
     squares.forEach(div => 
         div.remove()
         );
@@ -19,6 +19,8 @@
 
 createSquares();
  
+
+// change colors of squares when mouse passes over them 
  const squares = document.querySelectorAll(".grid-square")
 squares.forEach(square => {
     square.addEventListener('mouseover', () => {
@@ -26,8 +28,8 @@ squares.forEach(square => {
     })
 })
 
-const submitBtn = document.getElementById("submit-btn");
+// set up change 
 const sizeInput = document.getElementById("size-input");
-submitBtn.addEventListener('click', () => {
+sizeInput.addEventListener('change', () => {
     createSquares(sizeInput.value);
 })
