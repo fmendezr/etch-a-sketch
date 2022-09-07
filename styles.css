@@ -1,5 +1,28 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+h1 {
+   text-align: center;
+}
+
+#second {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 auto;
+}
+
+
 #grid {
+    align-self: center;
     display: grid;
     height: 500px;
     width: 500px;
+}
+
+#invisible-other-stuff > p {
+    color: transparent;
 }
